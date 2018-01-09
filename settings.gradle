@@ -1,1 +1,1 @@
-include ':app', ':myapplication', ':customviews'
+include ':app', ':myapplication', ':customviews', ':materialdesigndemo', ':myapplication2', ':aidldemo', ':theaddemo', ':activitylifedemo'

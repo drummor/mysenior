@@ -5,5 +5,5 @@ package com.weshape3d.mvpdemo.dispatheventdemo;
  */
 
 public class MyFlag {
-   public static String[] actions = new String[]{"DOWN","UP","ACTION_MOVE","ACTION_CANCEL"};
+   public static String[] actions = new String[]{"DOWN","UP","ACTION_MOVE","ACTION_CANCEL","DOWN","UP","ACTION_MOVE","ACTION_CANCEL","DOWN","UP","ACTION_MOVE","ACTION_CANCEL"};
 }

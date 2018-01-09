@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.weshape3d.mvpdemo.MainActivity">
-
     <Button
         android:id="@+id/bt"
         android:layout_width="wrap_content"
@@ -13,23 +12,21 @@
         android:text="Hello World!"
         tools:layout_editor_absoluteY="0dp"
         tools:layout_editor_absoluteX="0dp" />
-
     <com.weshape3d.mvpdemo.dispatheventdemo.ViewGroupA
         android:id="@+id/view_a"
         android:background="#ff0000"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-      >
+        android:layout_height="match_parent">
         <com.weshape3d.mvpdemo.dispatheventdemo.ViewGroupB
             android:id="@+id/view_b"
             android:background="#00ff00"
-            android:layout_width="300dp"
-            android:layout_height="300dp">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
             <com.weshape3d.mvpdemo.dispatheventdemo.ViewC
                 android:id="@+id/v_viewc"
                 android:background="#0000ff"
-                android:layout_width="100dp"
-                android:layout_height="100dp" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
         </com.weshape3d.mvpdemo.dispatheventdemo.ViewGroupB>
     </com.weshape3d.mvpdemo.dispatheventdemo.ViewGroupA>
 </LinearLayout>

@@ -3,9 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MVPDemo.iml" filepath="$PROJECT_DIR$/MVPDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/activitylifedemo/activitylifedemo.iml" filepath="$PROJECT_DIR$/activitylifedemo/activitylifedemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aidldemo/aidldemo.iml" filepath="$PROJECT_DIR$/aidldemo/aidldemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/customviews/customviews.iml" filepath="$PROJECT_DIR$/customviews/customviews.iml" />
+      <module fileurl="file://$PROJECT_DIR$/materialdesigndemo/materialdesigndemo.iml" filepath="$PROJECT_DIR$/materialdesigndemo/materialdesigndemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/myapplication/myapplication.iml" filepath="$PROJECT_DIR$/myapplication/myapplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myapplication2/myapplication2.iml" filepath="$PROJECT_DIR$/myapplication2/myapplication2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/theaddemo/theaddemo.iml" filepath="$PROJECT_DIR$/theaddemo/theaddemo.iml" />
     </modules>
   </component>
 </project>

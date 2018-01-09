@@ -1,6 +1,7 @@
 package com.weshape3d.mvpdemo.dispatheventdemo;
 
 import android.content.Context;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -26,20 +27,35 @@ public class ViewGroupA extends LinearLayout {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        Log.d("drummor","A dispatchTouchEvent --"+MyFlag.actions[ev.getAction()]+"---"+System.currentTimeMillis());
+        Log.d("drummor","A dispatchTouchEvent --"+ev.getAction()+"---"+System.currentTimeMillis());
         return super.dispatchTouchEvent(ev);
 
     }
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        Log.d("drummor","A onInterceptTouchEvent "+MyFlag.actions[ev.getAction()]);
+        Log.d("drummor","A onInterceptTouchEvent "+ev.getAction());
        return super.onInterceptTouchEvent(ev);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        Log.d("drummor","A onTouchEvent "+MyFlag.actions[event.getAction()]);
+
+        Log.d("drummor","A onTouchEvent "+event.getAction());
+
+        switch (event.getActionMasked()){
+            case MotionEvent.ACTION_DOWN:
+                break;
+            case MotionEvent.ACTION_POINTER_DOWN:
+                break;
+            case MotionEvent.ACTION_MOVE:
+
+                break;
+            case MotionEvent.ACTION_UP:
+                break;
+            case MotionEvent.ACTION_POINTER_UP:
+                break;
+        }
         super.onTouchEvent(event);
         return false;
     }

@@ -39,8 +39,7 @@ public class ViewGroupB extends LinearLayout {
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
        Log.d("drummor","B onInterceptTouchEvent");
-        super.onInterceptTouchEvent(ev);
-        return true;
+        return super.onInterceptTouchEvent(ev);
 
     }
 

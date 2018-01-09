@@ -11,6 +11,7 @@
         android:layout_width="300dp"
         android:layout_height="400dp">
         <RelativeLayout
+            
             android:background="@drawable/bg_radius"
             android:visibility="gone"
             android:id="@+id/fan"

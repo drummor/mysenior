@@ -9,12 +9,14 @@
         android:layout_width="match_parent"
         android:layout_height="500dp">
         <Button
+            android:id="@+id/myButton"
             android:gravity="center"
             android:textColor="#ff0000"
             android:text="111"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
         <TextView
+            android:id="@+id/my_tv"
             android:gravity="center"
             android:textColor="#222"
             android:text="USD发hi爱的是否"

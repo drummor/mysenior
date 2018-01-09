@@ -14,14 +14,18 @@
        <!--android:background="#cccccc"-->
        <!--android:layout_width="match_parent"-->
        <!--android:layout_height="200dp" />-->
-
+   <Button
+       android:text="点击加载"
+       android:id="@+id/bt"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content" />
    <com.weshape3d.customviews.mycostomviews.ScrollerLayout
        android:layout_width="match_parent"
        android:layout_height="50dp">
       <TextView
           android:gravity="center"
           android:textColor="#ff0000"
-          android:text="111"
+          android:text="1111"
           android:layout_width="match_parent"
           android:layout_height="match_parent" />
       <TextView
@@ -51,4 +55,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp" />
                </com.weshape3d.customviews.mycostomviews.MyViewGroup>
+   <Button
+       android:text="show dialog"
+       android:id="@+id/show_dl"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content" />
 </LinearLayout>

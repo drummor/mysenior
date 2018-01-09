@@ -1,33 +1,45 @@
 package com.weshape3d.mvpdemo;
 
-import android.animation.ValueAnimator;
+
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import com.weshape3d.mvpdemo.annotiondemo.BindView;
+import com.weshape3d.mvpdemo.annotiondemo.BindViewUtil;
+import com.weshape3d.mvpdemo.mycollection.AVLNode;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
-public class MainActivity extends Activity {
 
+public class MainActivity extends Activity {
+    @BindView( R.id.view_a)
+    TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        startActivity(new Intent(MainActivity.this,SearchViewActivity.class));
+        int[] number = {9,3,2,4,6,98,6,4,2,0,8,6,5,4,3,98};
+        AVLNode<Integer> node = new AVLNode<Integer>(9);
+        for(int i = 0;i<number.length;i++){
+            node.insertNode(new AVLNode<Integer>(number[i]));
+        }
+        node.println(node);
         setContentView(R.layout.activity_main);
+        BindViewUtil.binderView(this);
+
         Integer[] integers = new Integer[]{1,2,3,4,5,6,7,8};
        // final Observable mObservable=Observable.fromArray(integers);
         final Observable mObservable = Observable.just(10,12,13,14,15,16);
         final Observer mObserver=new Observer<Integer>() {
-
             @Override
             public void onSubscribe(Disposable d) {
             }
@@ -41,7 +53,6 @@ public class MainActivity extends Activity {
             @Override
             public void onComplete() {
             }
-
         };
 
         findViewById(R.id.bt).setOnClickListener(new View.OnClickListener() {
@@ -57,7 +68,6 @@ public class MainActivity extends Activity {
                         return f;
                     }
                 });
-
             }
         });
 
@@ -65,29 +75,28 @@ public class MainActivity extends Activity {
         Observable.fromArray(strings).subscribe(new Observer<String>() {
             @Override
             public void onSubscribe(@NonNull Disposable d) {
-
             }
 
             @Override
             public void onNext(@NonNull String s) {
-
             }
 
             @Override
             public void onError(@NonNull Throwable e) {
-
             }
 
             @Override
             public void onComplete() {
             }
         });
+
         findViewById(R.id.view_b).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d("drummor","ViewB onclick");
             }
         });
+
         findViewById(R.id.view_b).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -104,7 +113,4 @@ public class MainActivity extends Activity {
         });
 
     }
-
-
-
 }

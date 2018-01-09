@@ -35,17 +35,15 @@ public class ScrollerLayout extends ViewGroup {
     public ScrollerLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mScroller = new Scroller(context);
+        //这个地方是获取系统默认判定为滑动的最小值
         ViewConfiguration configuration = ViewConfiguration.get(context);
-        // 获取TouchSlop值
         mTouchSlop = ViewConfigurationCompat.getScaledPagingTouchSlop(configuration);
     }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        /**
-         * 为测量每个子控件的大小
-         */
+        //为测量每个子控件的大小
         int childCount = getChildCount();
         for(int i =0;i<childCount;i++){
             measureChild(getChildAt(i),widthMeasureSpec,heightMeasureSpec);
@@ -69,7 +67,6 @@ public class ScrollerLayout extends ViewGroup {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        Log.d("drummor","onInterceptTouchEvent"+ev.getAction());
         switch (ev.getAction()){
             case MotionEvent.ACTION_DOWN:
                 downX = (int) ev.getX();
@@ -79,7 +76,7 @@ public class ScrollerLayout extends ViewGroup {
                 moveX = (int) ev.getX();
                 float diff = Math.abs(moveX - downX);
                 lastMoveX = moveX;
-                // 当手指拖动值大于TouchSlop值时，认为应该进行滚动，拦截子控件的事件
+                // 当手指拖动值大于TouchSlop值时，认为应该进行滚动，拦截子控件的事件!
                 if (diff > mTouchSlop) {
                     return true;
                 }
@@ -90,16 +87,12 @@ public class ScrollerLayout extends ViewGroup {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        Log.d("drummor","onTouchEvent"+event.getAction());
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 downX = (int) event.getX();
                 lastMoveX = downX;
-                return  true;
             case MotionEvent.ACTION_MOVE:
-                /**
-                 * etX()是表示Widget相对于自身左上角的x坐标,而getRawX()是表示相对于屏幕左上角的x坐标值
-                 */
+                //etX()是表示Widget相对于自身左上角的x坐标,而getRawX()是表示相对于屏幕左上角的x坐标值
                 moveX = (int) event.getRawX();
                 int scrolledX = (lastMoveX - moveX);
                 if (getScrollX() + scrolledX < leftBorder) {

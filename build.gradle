@@ -11,10 +11,13 @@ buildscript {
         // in the individual module build.gradle files
     }
 }
-
+task helloworld{
+    println 'hello world!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+}
 allprojects {
     repositories {
         jcenter()
+        1
     }
 }
 
